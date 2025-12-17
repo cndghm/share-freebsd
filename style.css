@@ -1,0 +1,102 @@
+:root.white {
+    --bg: #ffffff;
+    --fg: #000000;
+    --link: #0033aa;
+}
+
+:root {
+    --bg: #000000;
+    --fg: #e0e0e0;
+    --link: #66aaff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: serif;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 1rem 0;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    white-space: nowrap;
+}
+
+nav a {
+    color: var(--link);
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.posts-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.posts-nav a {
+    color: var(--link);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.posts-nav a:hover {
+    text-decoration: underline;
+}
+
+#theme-toggle {
+    position: absolute;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--fg);
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+main {
+    height: calc(100% - 4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 70ch;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+h1 {
+    font-weight: normal;
+}
+
+code {
+    display: block;
+    white-space: pre;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Using FreeBSD as a Daily Driver</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+   <header>
+   <nav>
+     <a href="https://cgit.freebsd.org/src/">src</a>
+     <a href="https://docs.freebsd.org/">docs</a>
+     <a href="https://bugs.freebsd.org/">bugs</a>
+     <a href="index.html">home</a>
+   </nav>
+        <button id="theme-toggle" aria-label="Toggle theme">◐</button>
+   </header>
+
+   <main>
+        <h1>Using FreeBSD as a Daily Driver</h1>
+
+        <p>
+            Over time, FreeBSD has made enormous progress in pretty much every area.
+            Since I’m an advocate for using it, for various reasons this post is the
+            first in a series meant to share some changes that people may not be aware of.
+        </p>
+
+        <p>
+            With the release of FreeBSD 15.0-STABLE, there is a new Tech Preview that
+            changes how freebsd-update works by integrating it with pkg. This means
+            you can now update your system through packages. Some parts are still a
+            work in progress, and the community is actively improving them. Here
+            you’ll find a few practical notes about the current state.
+        </p>
+
+        <h2>Webcam</h2>
+
+        <p>
+            Support for webcams and wireless cards has improved, and a few notes
+            are worth mentioning.
+        </p>
+
+        <p>
+            To use your webcam, make sure it’s one of the supported models. If it
+            isn’t, please report a bug to me or file one on Bugzilla. I’m willing
+            to put effort into improving support.
+        </p>
+
+        <p>
+            You’ll need webcamd and cuse4bsd enabled. You can do this with the
+            following commands: 
+            <code>
+# sysrc kld_list+=cuse4bsd
+# sysrc webcamd_enable=
+            </code>
+        </p>
+
+    </main>
+
+    <script>
+        const root = document.documentElement;
+        root.classList.add("black");
+        document.getElementById("theme-toggle")
+            .addEventListener("click", () => root.classList.toggle("white"));
+    </script>
+</body>
+</html>

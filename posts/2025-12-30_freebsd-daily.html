@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Using FreeBSD as a Daily Driver</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+   <header>
+     <nav>
+       <a href="https://cgit.freebsd.org/src/">src</a>
+       <a href="https://docs.freebsd.org/">docs</a>
+       <a href="https://bugs.freebsd.org/">bugs</a>
+       <a href="../index.html">home</a>
+     </nav>
+     <button id="theme-toggle" aria-label="Toggle theme">◐</button>
+   </header>
+
+   <main>
+        <h1>Using FreeBSD as a Daily Driver [2]</h1>
+
+        <p>
+	  For the past few weeks, I’ve been using FreeBSD as my daily driver.<br>
+	  This is not a guide or advice, just a report of my experience.<br>
+	  Running FreeBSD on a laptop does require some manual work, especially on newer CPUs.<br>
+	  Battery life and power management may need tuning through configuration files, but nothing that basic research can’t solve.<br>
+	  I’m currently working on a more organized repository to document these changes.<br>
+	  Progress is slow due to my limited access to newer AMD hardware, which has delayed the next post.<br>
+	</p>
+
+	<p>
+	  But, if you are using a CPU with Intel Speed Shift suport, you can add the following to your /etc/sysctl.conf:<br>
+	  > 100 means maximum energy saving, 0 means maximum perfomance.<br>
+	  Assuming you have 8 threads.<br>
+	</p>
+
+	<code>
+dev.hwpstate_intel.0.epp=100
+dev.hwpstate_intel.1.epp=100
+dev.hwpstate_intel.2.epp=100
+dev.hwpstate_intel.3.epp=100
+dev.hwpstate_intel.4.epp=100
+dev.hwpstate_intel.5.epp=100
+dev.hwpstate_intel.6.epp=100
+dev.hwpstate_intel.7.epp=100
+	</code>
+
+	<p>
+	  Reference: https://docs.freebsd.org/en/books/handbook/config/#hwpstate_intel
+	</p>
+   </main>
+
+   <script>
+     const root = document.documentElement;
+     root.classList.add("black");
+     document.getElementById("theme-toggle")
+    .addEventListener("click", () => root.classList.toggle("white"));
+   </script>
+</body>
+</html>
